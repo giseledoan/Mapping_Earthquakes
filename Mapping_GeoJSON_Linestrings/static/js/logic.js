@@ -17,7 +17,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 
 // Create a base layer that holds both maps.
 let baseMaps = {
-  Street: light,
+  Light: light,
   Dark: dark
 };
 
@@ -25,7 +25,7 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [44, -80],
   zoom: 2,
-  layers: [streets]
+  layers: [light]
 })
 
 // Pass our map layers into our layers control and add the layers control to the map.
@@ -35,7 +35,7 @@ L.control.layers(baseMaps).addTo(map);
 light.addTo(map);
 
 // Add GeoJSON data.
-let torontoData = "https://raw.githubusercontent.com/giseledoan/Mapping_Earthquakes/Mapping_GeoJSON_Points/majorAirports.json";
+let torontoData = "https://github.com/giseledoan/Mapping_Earthquakes/blob/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
 
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
